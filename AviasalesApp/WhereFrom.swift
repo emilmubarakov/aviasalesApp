@@ -19,16 +19,16 @@ class WhereFrom: UIView {
     
 //    weak var delegate: LocationInputActivationViewDelegate?
     
-    private let indicatorView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .black
-        return view
-    }()
+//    private let indicatorView: UIView = {
+//        let view = UIView()
+//        view.backgroundColor = .black
+//        return view
+//    }()
     
     private let placeholderLabel: UILabel = {
         let label = UILabel()
-        label.text = "Where from?"
-        label.font = UIFont.systemFont(ofSize: 18)
+        label.text = "Where from"
+        label.font = UIFont.systemFont(ofSize: 14, weight: .bold)
         label.textColor = .darkGray
         return label
     }()
@@ -40,12 +40,16 @@ class WhereFrom: UIView {
         
         backgroundColor = .white
         
-        addSubview(indicatorView)
-        indicatorView.centerY(inView: self, leftAnchor: leftAnchor, paddingLeft: 16)
-        indicatorView.setDimensions(height: 6, width: 6)
+//        addSubview(indicatorView)
+//        indicatorView.centerY(inView: self, leftAnchor: leftAnchor, paddingLeft: 16)
+//        indicatorView.setDimensions(height: 6, width: 6)
         
         addSubview(placeholderLabel)
-        placeholderLabel.centerY(inView: self, leftAnchor: indicatorView.rightAnchor, paddingLeft: 28)
+        placeholderLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            placeholderLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 14),
+            placeholderLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor)])
         
 //        let tap = UITapGestureRecognizer(target: self, action: #selector(handleShowLocationInputView))
 //        addGestureRecognizer(tap)
