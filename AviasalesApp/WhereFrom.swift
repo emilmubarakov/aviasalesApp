@@ -8,16 +8,16 @@
 import Foundation
 import UIKit
 
-//protocol LocationInputActivationViewDelegate: class {
-//    func presentLoactionInputView()
-//}
+protocol WhereFromViewDelegate: class {
+    func presentWhereFromView()
+}
 
 
 class WhereFrom: UIView {
     
     //MARK: - Properties
     
-//    weak var delegate: LocationInputActivationViewDelegate?
+    weak var delegate: WhereFromViewDelegate?
     
 //    private let indicatorView: UIView = {
 //        let view = UIView()
@@ -51,15 +51,15 @@ class WhereFrom: UIView {
             placeholderLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 14),
             placeholderLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor)])
         
-//        let tap = UITapGestureRecognizer(target: self, action: #selector(handleShowLocationInputView))
-//        addGestureRecognizer(tap)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleShowWhereFromView))
+        addGestureRecognizer(tap)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-//    @objc func handleShowLocationInputView() {
-//        delegate?.presentLoactionInputView()
-//    }
+    @objc func handleShowWhereFromView() {
+        delegate?.presentWhereFromView()
+    }
 }

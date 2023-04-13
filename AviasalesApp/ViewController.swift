@@ -85,6 +85,8 @@ class ViewController: UIViewController {
         return button
     }()
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBlue
@@ -150,6 +152,7 @@ class ViewController: UIViewController {
     func configureWhereFrom() {
         view.addSubview(whereFromView)
         whereFromView.translatesAutoresizingMaskIntoConstraints = false
+        whereFromView.delegate = self
         
         NSLayoutConstraint.activate([
             whereFromView.topAnchor.constraint(equalTo: centralView.topAnchor),
@@ -162,6 +165,7 @@ class ViewController: UIViewController {
     func configureWhereTo() {
         view.addSubview(whereToView)
         whereToView.translatesAutoresizingMaskIntoConstraints = false
+        whereToView.delegate = self
         
         NSLayoutConstraint.activate([
             whereToView.topAnchor.constraint(equalTo: whereFromView.bottomAnchor),
@@ -206,7 +210,17 @@ class ViewController: UIViewController {
             filterButton.heightAnchor.constraint(equalToConstant: 40)
         ])
     }
-
-
 }
 
+extension ViewController: WhereFromViewDelegate {
+    func presentWhereFromView() {
+        present(ChooseCity(), animated: true)
+    }
+}
+
+extension ViewController: LocationInputActivationViewDelegate {
+    func presentLoactionInputView() {
+        print("Second")
+        present(ChooseCity(), animated: true)
+    }
+}

@@ -8,22 +8,16 @@
 import Foundation
 import UIKit
 
-//protocol LocationInputActivationViewDelegate: class {
-//    func presentLoactionInputView()
-//}
+protocol LocationInputActivationViewDelegate: class {
+    func presentLoactionInputView()
+}
 
 
 class WhereTo: UIView {
     
     //MARK: - Properties
     
-//    weak var delegate: LocationInputActivationViewDelegate?
-    
-//    private let indicatorView: UIView = {
-//        let view = UIView()
-//        view.backgroundColor = .black
-//        return view
-//    }()
+    weak var delegate: LocationInputActivationViewDelegate?
     
     private let placeholderLabel: UILabel = {
         let label = UILabel()
@@ -40,10 +34,6 @@ class WhereTo: UIView {
         
         backgroundColor = .white
         
-//        addSubview(indicatorView)
-//        indicatorView.centerY(inView: self, leftAnchor: leftAnchor, paddingLeft: 16)
-//        indicatorView.setDimensions(height: 6, width: 6)
-        
         addSubview(placeholderLabel)
         placeholderLabel.translatesAutoresizingMaskIntoConstraints = false
         
@@ -51,15 +41,15 @@ class WhereTo: UIView {
             placeholderLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 14),
             placeholderLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor)])
         
-//        let tap = UITapGestureRecognizer(target: self, action: #selector(handleShowLocationInputView))
-//        addGestureRecognizer(tap)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleShowLocationInputView))
+        addGestureRecognizer(tap)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-//    @objc func handleShowLocationInputView() {
-//        delegate?.presentLoactionInputView()
-//    }
+    @objc func handleShowLocationInputView() {
+        delegate?.presentLoactionInputView()
+    }
 }
