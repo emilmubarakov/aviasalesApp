@@ -19,12 +19,6 @@ class WhereFrom: UIView {
     
     weak var delegate: WhereFromViewDelegate?
     
-//    private let indicatorView: UIView = {
-//        let view = UIView()
-//        view.backgroundColor = .black
-//        return view
-//    }()
-    
     private let placeholderLabel: UILabel = {
         let label = UILabel()
         label.text = "Where from"
@@ -40,19 +34,10 @@ class WhereFrom: UIView {
         
         backgroundColor = .white
         
-//        addSubview(indicatorView)
-//        indicatorView.centerY(inView: self, leftAnchor: leftAnchor, paddingLeft: 16)
-//        indicatorView.setDimensions(height: 6, width: 6)
-        
-        addSubview(placeholderLabel)
-        placeholderLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            placeholderLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 14),
-            placeholderLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor)])
-        
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleShowWhereFromView))
         addGestureRecognizer(tap)
+        
+        configurPlaceHolderLabel()
     }
     
     required init?(coder: NSCoder) {
@@ -61,5 +46,14 @@ class WhereFrom: UIView {
     
     @objc func handleShowWhereFromView() {
         delegate?.presentWhereFromView()
+    }
+    
+    private func configurPlaceHolderLabel() {
+        addSubview(placeholderLabel)
+        placeholderLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            placeholderLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 14),
+            placeholderLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor)])
     }
 }

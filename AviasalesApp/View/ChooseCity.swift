@@ -11,10 +11,8 @@ import UIKit
 class ChooseCity: UIViewController {
     
     let url = "https://jsonplaceholder.typicode.com/posts"
-//    private var temperatureData: [StoryElement] = []
     private var titleArray: [String] = []
 
-//    var city = ["Moscow", "Kazan", "Los Angeles", "Bangkok", "Paris"]
     var filteredCities = [String]()
     var isSearching = false
     
@@ -44,7 +42,7 @@ class ChooseCity: UIViewController {
         
         configurUI()
         
-        getData(from: url) { [weak self] value in
+        APIManager.shared.getData(from: url) { [weak self] value in
             DispatchQueue.main.async {
                 let temperatureData = value
                 
@@ -84,22 +82,6 @@ class ChooseCity: UIViewController {
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10)])
-    }
-    
-    private func getData(from url: String, completion: @escaping ([StoryElement]) -> Void) {
-        
-        let url = URL(string: url)!
-        var request = URLRequest(url: url)
-            
-        let task = URLSession.shared.dataTask(with: request) {data, response, error in
-            guard let data else { return }
-            if let weatherData = try? JSONDecoder().decode(Story.self, from: data) {
-                completion(weatherData)
-            } else {
-                print("Fail")
-            }
-        }
-        task.resume()
     }
 }
 

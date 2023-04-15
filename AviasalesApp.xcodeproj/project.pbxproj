@@ -17,6 +17,7 @@
 		1611B35029E6F6D100F4937F /* WhereFrom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1611B34F29E6F6D100F4937F /* WhereFrom.swift */; };
 		1611B35229E81CED00F4937F /* ChooseCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1611B35129E81CED00F4937F /* ChooseCity.swift */; };
 		1611B35729E9C73E00F4937F /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1611B35629E9C73E00F4937F /* Story.swift */; };
+		1611B35929EA84D900F4937F /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1611B35829EA84D900F4937F /* APIManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		1611B34F29E6F6D100F4937F /* WhereFrom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereFrom.swift; sourceTree = "<group>"; };
 		1611B35129E81CED00F4937F /* ChooseCity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCity.swift; sourceTree = "<group>"; };
 		1611B35629E9C73E00F4937F /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
+		1611B35829EA84D900F4937F /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,15 +67,12 @@
 			isa = PBXGroup;
 			children = (
 				1611B35329E81D0F00F4937F /* Application */,
-				1611B33B29E560A700F4937F /* ViewController.swift */,
-				1611B34F29E6F6D100F4937F /* WhereFrom.swift */,
-				1611B34D29E5833000F4937F /* WhereTo.swift */,
-				1611B35129E81CED00F4937F /* ChooseCity.swift */,
-				1611B34B29E56C7800F4937F /* Extension.swift */,
+				1611B35A29EA869400F4937F /* View */,
+				1611B35B29EA86B000F4937F /* Model */,
+				1611B35C29EA86DE00F4937F /* Resourses */,
 				1611B34029E560AC00F4937F /* Assets.xcassets */,
 				1611B34229E560AC00F4937F /* LaunchScreen.storyboard */,
 				1611B34529E560AC00F4937F /* Info.plist */,
-				1611B35629E9C73E00F4937F /* Story.swift */,
 			);
 			path = AviasalesApp;
 			sourceTree = "<group>";
@@ -85,6 +84,34 @@
 				1611B33929E560A700F4937F /* SceneDelegate.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		1611B35A29EA869400F4937F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1611B33B29E560A700F4937F /* ViewController.swift */,
+				1611B34F29E6F6D100F4937F /* WhereFrom.swift */,
+				1611B34D29E5833000F4937F /* WhereTo.swift */,
+				1611B35129E81CED00F4937F /* ChooseCity.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1611B35B29EA86B000F4937F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1611B35629E9C73E00F4937F /* Story.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1611B35C29EA86DE00F4937F /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				1611B35829EA84D900F4937F /* APIManager.swift */,
+				1611B34B29E56C7800F4937F /* Extension.swift */,
+			);
+			path = Resourses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +191,7 @@
 				1611B34C29E56C7800F4937F /* Extension.swift in Sources */,
 				1611B33A29E560A700F4937F /* SceneDelegate.swift in Sources */,
 				1611B35229E81CED00F4937F /* ChooseCity.swift in Sources */,
+				1611B35929EA84D900F4937F /* APIManager.swift in Sources */,
 				1611B35029E6F6D100F4937F /* WhereFrom.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

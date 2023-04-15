@@ -34,15 +34,10 @@ class WhereTo: UIView {
         
         backgroundColor = .white
         
-        addSubview(placeholderLabel)
-        placeholderLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            placeholderLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 14),
-            placeholderLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor)])
-        
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleShowLocationInputView))
         addGestureRecognizer(tap)
+        
+        configurPlaceHolderLabel()
     }
     
     required init?(coder: NSCoder) {
@@ -51,5 +46,14 @@ class WhereTo: UIView {
     
     @objc func handleShowLocationInputView() {
         delegate?.presentLoactionInputView()
+    }
+    
+    private func configurPlaceHolderLabel() {
+        addSubview(placeholderLabel)
+        placeholderLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            placeholderLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 14),
+            placeholderLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor)])
     }
 }
